@@ -9,11 +9,12 @@ import AboutForm from "./screens/AboutForm";
 import Address from "./screens/Address";
 import Selfie from "./screens/Selfie";
 import PhotoShoot from "./screens/PhotoShoot";
+import Intrest from "./screens/Intrest";
 
 export default function App() {
   return (
     <>
-      <PhotoShoot />
+      <Intrest />
       <StatusBar style="auto" />
     </>
   );
