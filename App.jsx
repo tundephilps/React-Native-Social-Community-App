@@ -5,11 +5,13 @@ import Login from "./screens/Login";
 import SignUp from "./screens/SignUp";
 import OTPScreen from "./screens/OTPScreen";
 import OTPInput from "./components/OTPInput";
+import AboutForm from "./screens/AboutForm";
 
 export default function App() {
   return (
-    <View>
-      <OTPScreen />
-    </View>
+    <>
+      <AboutForm />
+      <StatusBar style="auto" />
+    </>
   );
 }
