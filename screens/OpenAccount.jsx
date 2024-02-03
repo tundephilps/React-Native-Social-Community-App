@@ -1,8 +1,10 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
 
 const OpenAccount = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={{ height: "100%", backgroundColor: "#000000" }}>
       <View
@@ -61,11 +63,7 @@ const OpenAccount = () => {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity
-            onPress={() => {
-              /* handle onPress */
-            }}
-          >
+          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
             <View
               style={{
                 marginTop: 6, // Margin top

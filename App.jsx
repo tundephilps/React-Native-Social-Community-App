@@ -11,11 +11,12 @@ import Selfie from "./screens/Selfie";
 import PhotoShoot from "./screens/PhotoShoot";
 import Intrest from "./screens/Intrest";
 import Passcode from "./screens/Passcode";
+import AppNavigation from "./navigation";
 
 export default function App() {
   return (
     <>
-      <Passcode />
+      <AppNavigation />
       <StatusBar style="auto" />
     </>
   );

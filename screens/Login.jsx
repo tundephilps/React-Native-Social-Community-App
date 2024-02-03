@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -19,6 +20,9 @@ const Login = () => {
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prev) => !prev);
   };
+
+  const navigation = useNavigation();
+
   return (
     <SafeAreaView
       style={{ backgroundColor: "#fefefe", height: "100%", padding: 16 }}
@@ -96,11 +100,7 @@ const Login = () => {
       </Text>
 
       <View style={{ height: "25%" }} />
-      <TouchableOpacity
-        onPress={() => {
-          /* handle onPress */
-        }}
-      >
+      <TouchableOpacity onPress={() => navigation.navigate("MyTabs")}>
         <View
           style={{
             marginTop: 6, // Margin top
