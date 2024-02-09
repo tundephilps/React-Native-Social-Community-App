@@ -172,6 +172,8 @@ const HashAi = () => {
             </View>
           </View>
         </View>
+
+        <View style={{ padding: 22 }} />
       </ScrollView>
     </SafeAreaView>
   );

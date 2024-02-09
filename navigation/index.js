@@ -40,6 +40,8 @@ export default function AppNavigation() {
         screenOptions={({ route }) => ({
           tabBarActiveTintColor: "black",
           tabBarInactiveTintColor: "gray",
+
+          tabBarStyle: { position: "absolute" },
           tabBarLabelStyle: {
             fontWeight: "700", // Add this line to set fontWeight
             marginBottom: 6,

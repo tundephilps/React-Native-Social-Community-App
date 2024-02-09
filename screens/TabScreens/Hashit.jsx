@@ -51,6 +51,8 @@ const Hashit = () => {
           Coming Soon
         </Text>
       </View>
+
+      <View style={{ padding: 22 }} />
     </SafeAreaView>
   );
 };

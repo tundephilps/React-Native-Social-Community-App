@@ -264,6 +264,7 @@ const Cards = () => {
             </Text>
           </View>
         </TouchableOpacity>
+        <View style={{ padding: 22 }} />
       </ScrollView>
     </SafeAreaView>
   );

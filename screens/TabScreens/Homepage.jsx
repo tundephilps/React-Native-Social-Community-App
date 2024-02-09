@@ -524,6 +524,9 @@ const Homepage = () => {
           </View>
         </View>
 
+        <Text style={{ paddingVertical: 16, fontWeight: "700" }}>
+          Debit Cards
+        </Text>
         <DebitCardsList />
 
         <Text style={{ paddingVertical: 16, fontWeight: "700" }}>
@@ -564,6 +567,8 @@ const Homepage = () => {
             App version 1.1.2
           </Text>
         </View>
+
+        <View style={{ padding: 22 }} />
       </ScrollView>
     </SafeAreaView>
   );

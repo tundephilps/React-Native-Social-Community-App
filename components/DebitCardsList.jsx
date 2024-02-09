@@ -189,9 +189,6 @@ const renderItem = ({ item }) => (
 const DebitCardsList = () => {
   return (
     <View>
-      <Text style={{ paddingVertical: 16, fontWeight: "700" }}>
-        Debit Cards
-      </Text>
       <FlatList
         data={data}
         horizontal
