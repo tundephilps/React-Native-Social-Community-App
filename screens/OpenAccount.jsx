@@ -34,11 +34,7 @@ const OpenAccount = () => {
         </View>
 
         <View style={{ paddingTop: "20%", gap: 8 }}>
-          <TouchableOpacity
-            onPress={() => {
-              /* handle onPress */
-            }}
-          >
+          <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
             <View
               style={{
                 marginTop: 6, // Margin top

@@ -11,6 +11,7 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -20,6 +21,8 @@ const SignUp = () => {
 
   const [referral, setReferral] = useState("");
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  const navigation = useNavigation();
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prev) => !prev);
@@ -190,11 +193,7 @@ const SignUp = () => {
         </Text>
 
         <View style={{ height: "5%" }} />
-        <TouchableOpacity
-          onPress={() => {
-            /* handle onPress */
-          }}
-        >
+        <TouchableOpacity onPress={() => navigation.navigate("OTPScreen")}>
           <View
             style={{
               marginTop: 6, // Margin top

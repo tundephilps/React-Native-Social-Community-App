@@ -13,6 +13,12 @@ import MarketPlace from "../screens/TabScreens/MarketPlace";
 import Login from "../screens/Login";
 import More from "../screens/TabScreens/More";
 import HashAi from "../screens/TabScreens/HashAi";
+import SignUp from "../screens/SignUp";
+import OTPScreen from "../screens/OTPScreen";
+import AboutForm from "../screens/AboutForm";
+import Address from "../screens/Address";
+import Selfie from "../screens/Selfie";
+import PhotoShoot from "../screens/PhotoShoot";
 
 const Tab = createBottomTabNavigator();
 
@@ -27,6 +33,17 @@ export default function AppNavigation() {
       >
         <Stack.Screen name="OpenAccount" component={OpenAccount} />
 
+        <Stack.Screen name="SignUp" component={SignUp} />
+
+        <Stack.Screen name="OTPScreen" component={OTPScreen} />
+
+        <Stack.Screen name="AboutForm" component={AboutForm} />
+
+        <Stack.Screen name="Address" component={Address} />
+
+        <Stack.Screen name="Selfie" component={Selfie} />
+
+        <Stack.Screen name="PhotoShoot" component={PhotoShoot} />
         <Stack.Screen name="MyTabs" component={MyTabs} />
 
         <Stack.Screen name="Login" component={Login} />

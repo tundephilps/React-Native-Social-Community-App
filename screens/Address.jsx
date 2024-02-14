@@ -13,6 +13,7 @@ import BottomSheet from "react-native-raw-bottom-sheet";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const statesData = [
   "Abia",
@@ -54,6 +55,7 @@ const statesData = [
 ];
 
 const Address = () => {
+  const navigation = useNavigation();
   const bottomSheetRef = useRef(null);
   const [selectedState, setSelectedState] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
@@ -217,7 +219,7 @@ const Address = () => {
               <TextInput
                 placeholder="Enter your street name"
                 style={styles.input}
-                keyboardType="numeric"
+                keyboardType="ascii-capable"
                 autoCapitalize="none"
               />
             </View>
@@ -225,11 +227,7 @@ const Address = () => {
         </View>
 
         <View style={{ height: 32 }} />
-        <TouchableOpacity
-          onPress={() => {
-            /* handle onPress */
-          }}
-        >
+        <TouchableOpacity onPress={() => navigation.navigate("Selfie")}>
           <View
             style={{
               marginTop: 6, // Margin top

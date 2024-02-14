@@ -16,8 +16,10 @@ import { Ionicons } from "@expo/vector-icons";
 
 import { RadioButton } from "react-native-paper";
 import RBSheet from "react-native-raw-bottom-sheet";
+import { useNavigation } from "@react-navigation/native";
 
 const AboutForm = () => {
+  const navigation = useNavigation();
   const [firstName, setFirstName] = useState("");
 
   const [gender, setGender] = useState("");
@@ -260,11 +262,7 @@ const AboutForm = () => {
 
           {/* Button */}
           <View style={{ height: 12 }} />
-          <TouchableOpacity
-            onPress={() => {
-              /* handle onPress */
-            }}
-          >
+          <TouchableOpacity onPress={() => navigation.navigate("Address")}>
             <View
               style={{
                 marginTop: 6, // Margin top

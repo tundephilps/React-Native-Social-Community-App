@@ -4,8 +4,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import { Ionicons } from "@expo/vector-icons";
 import OTP from "../components/OTP";
+import { useNavigation } from "@react-navigation/native";
 
 const OTPScreen = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView
       style={{ backgroundColor: "#fefefe", height: "100%", padding: 16 }}
@@ -40,11 +42,7 @@ const OTPScreen = () => {
       </View>
 
       <View style={{ height: "35%" }} />
-      <TouchableOpacity
-        onPress={() => {
-          /* handle onPress */
-        }}
-      >
+      <TouchableOpacity onPress={() => navigation.navigate("AboutForm")}>
         <View
           style={{
             marginTop: 6, // Margin top

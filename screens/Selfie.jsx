@@ -10,8 +10,10 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const Selfie = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={{ backgroundColor: "#fefefe", padding: 16, flex: 1 }}>
       <TouchableOpacity>
@@ -40,11 +42,7 @@ const Selfie = () => {
           <Text style={{ fontWeight: "300" }}>Take a Selfie</Text>
         </View>
         <View style={{ padding: "30%" }} />
-        <TouchableOpacity
-          onPress={() => {
-            /* handle onPress */
-          }}
-        >
+        <TouchableOpacity onPress={() => navigation.navigate("PhotoShoot")}>
           <View
             style={{
               marginTop: 6, // Margin top
