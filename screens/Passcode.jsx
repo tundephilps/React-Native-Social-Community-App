@@ -9,6 +9,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
 const { width, height } = Dimensions.get("window");
 
 const dialPad = [1, 2, 3, 4, 5, 6, 7, 8, 9, "", 0, "del"];
@@ -16,6 +17,8 @@ const dialPadSize = width * 0.135;
 const pinLength = 6;
 
 export default function Passcode() {
+  const navigation = useNavigation();
+
   const [pinCode, setPinCode] = useState([]);
 
   const DialPad = ({ onPress }) => {
@@ -32,7 +35,14 @@ export default function Passcode() {
           renderItem={({ item }) => {
             return (
               <TouchableOpacity
-                onPress={() => onPress(item)}
+                onPress={() => {
+                  onPress(item);
+                  // Check if the pin code length reaches the desired length
+                  if (pinCode.length === pinLength) {
+                    // Navigate to another screen (replace 'AnotherScreen' with the actual screen name)
+                    navigation.navigate("MyTabs");
+                  }
+                }}
                 disabled={item === ""}
               >
                 <View

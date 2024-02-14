@@ -19,6 +19,8 @@ import AboutForm from "../screens/AboutForm";
 import Address from "../screens/Address";
 import Selfie from "../screens/Selfie";
 import PhotoShoot from "../screens/PhotoShoot";
+import Intrest from "../screens/Intrest";
+import Passcode from "../screens/Passcode";
 
 const Tab = createBottomTabNavigator();
 
@@ -43,6 +45,9 @@ export default function AppNavigation() {
 
         <Stack.Screen name="Selfie" component={Selfie} />
 
+        <Stack.Screen name="Intrest" component={Intrest} />
+
+        <Stack.Screen name="Passcode" component={Passcode} />
         <Stack.Screen name="PhotoShoot" component={PhotoShoot} />
         <Stack.Screen name="MyTabs" component={MyTabs} />
 

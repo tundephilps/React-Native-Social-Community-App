@@ -14,10 +14,13 @@ import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 //import { useNavigation } from "@react-navigation/native";
 
 export default function PhotoShoot() {
+  const navigation = useNavigation();
+
   const [type, setType] = useState(CameraType.back);
   const [permission, requestPermission] = Camera.useCameraPermissions();
   const [isSnapping, setSnapping] = useState(false);
@@ -165,6 +168,8 @@ export default function PhotoShoot() {
             <TouchableOpacity
               style={styles.modalButton}
               //      onPress={saveImageToBackend}
+
+              onPress={() => navigation.navigate("Intrest")}
             >
               <Text style={styles.modalButtonText}>This Image Looks Good</Text>
             </TouchableOpacity>

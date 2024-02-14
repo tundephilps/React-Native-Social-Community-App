@@ -9,6 +9,7 @@ import {
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const data = [
   {
@@ -86,6 +87,8 @@ const data = [
 ];
 
 const Intrest = () => {
+  const navigation = useNavigation();
+
   const [selectedItems, setSelectedItems] = useState([]);
 
   const handleItemPress = (item) => {
@@ -172,11 +175,7 @@ const Intrest = () => {
       </ScrollView>
 
       <View style={{ padding: 16 }}>
-        <TouchableOpacity
-          onPress={() => {
-            /* handle onPress */
-          }}
-        >
+        <TouchableOpacity onPress={() => navigation.navigate("Passcode")}>
           <View
             style={{
               marginTop: 6, // Margin top
