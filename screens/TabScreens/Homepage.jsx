@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -17,6 +17,11 @@ import { FontAwesome5, Fontisto } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import Slides from "../../components/Slides";
 import DebitCardsList from "../../components/DebitCardsList";
+
+import BottomSheet from "react-native-raw-bottom-sheet";
+import AccordionGrid from "../../components/AccordionGrid";
+import FundAccount from "../../components/FundAccount";
+import ChooseOption from "../../components/ChooseOption";
 
 const data = [1]; // Dummy data, you can use any data here
 
@@ -218,6 +223,12 @@ const renderItem = ({ item }) => (
 );
 
 const Homepage = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
     <SafeAreaView
       style={{ backgroundColor: "#fefefe", height: "100%", padding: 16 }}
@@ -307,14 +318,41 @@ const Homepage = () => {
             justifyContent: "space-between",
           }}
         >
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
+          <TouchableOpacity
+            onPress={() => this.sheet1.open()}
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              gap: 6,
+              padding: 8,
+            }}
+          >
             <Ionicons name="add-circle" size={16} color="white" />
             <Text style={{ color: "#f1f2f5", fontWeight: "300", fontSize: 12 }}>
               Account
             </Text>
-          </View>
+          </TouchableOpacity>
 
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
+          <BottomSheet
+            ref={(ref) => (this.sheet1 = ref)}
+            height={500}
+            closeOnDragDown
+            customStyles={{
+              container: styles.bottomSheetContainer,
+            }}
+          >
+            <FundAccount />
+          </BottomSheet>
+
+          <TouchableOpacity
+            onPress={() => this.sheet2.open()}
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              gap: 6,
+              padding: 8,
+            }}
+          >
             <MaterialCommunityIcons
               name="lightning-bolt"
               size={16}
@@ -323,14 +361,41 @@ const Homepage = () => {
             <Text style={{ color: "#f1f2f5", fontWeight: "300", fontSize: 12 }}>
               Quick actions
             </Text>
-          </View>
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
-            <Feather name="arrow-up-circle" size={16} color="white" />
+          </TouchableOpacity>
+
+          <BottomSheet
+            ref={(ref) => (this.sheet2 = ref)}
+            height={500}
+            closeOnDragDown
+            customStyles={{
+              container: styles.bottomSheetContainer,
+            }}
+          >
+            <ChooseOption />
+          </BottomSheet>
+
+          <TouchableOpacity
+            onPress={handleToggle}
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              gap: 6,
+              padding: 8,
+            }}
+          >
+            <Feather
+              name={isExpanded ? "arrow-down-circle" : "arrow-up-circle"}
+              size={16}
+              color="white"
+            />
             <Text style={{ color: "#f1f2f5", fontWeight: "300", fontSize: 12 }}>
               More
             </Text>
-          </View>
+          </TouchableOpacity>
         </View>
+
+        {/* Accordion Content */}
+        {isExpanded && <AccordionGrid />}
 
         <View style={{ height: 32 }} />
 
